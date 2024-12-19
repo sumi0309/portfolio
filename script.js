@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll("nav ul li a");
 
@@ -17,3 +16,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const readMoreLinks = document.querySelectorAll(".read-more");
+
+  readMoreLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const details = link
+        .closest(".project")
+        .querySelector(".project-details");
+
+      if (details.style.display === "none" || details.style.display === "") {
+        details.style.display = "block";
+        link.textContent = "[Read Less]";
+      } else {
+        details.style.display = "none";
+        link.textContent = "[Read More]";
+      }
+    });
+  });
+});
+
+function toggleDetails(id) {
+  const details = document.getElementById(id);
+  if (details.style.display === "none") {
+    details.style.display = "block";
+  } else {
+    details.style.display = "none";
+  }
+}

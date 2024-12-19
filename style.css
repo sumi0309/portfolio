@@ -76,3 +76,18 @@ header nav h1 .location {
   margin-bottom: 4rem;
   padding-bottom: 2%;
 }
+
+.project-details {
+  display: none;
+  margin-top: 1rem;
+}
+
+.read-more {
+  color: #ffa500;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.read-more:hover {
+  color: #ff8c00;
+}
