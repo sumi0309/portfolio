@@ -9,18 +9,21 @@
   <body>
     <header>
       <nav>
-        <h1>
-          Sumiran Jaiswal <span class="location">| College Park, MD, USA</span>
-        </h1>
-        <ul>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="left-nav">
+          <h1>Sumiran Jaiswal &nbsp;</h1>
+          <span class="location">| College Park, MD, USA</span>
+        </div>
+        <div class="right-nav">
+          <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#contact">Connect</a></li>
+          </ul>
+        </div>
       </nav>
     </header>
     <section id="about">
@@ -44,6 +47,10 @@
         <strong>Google Cloud Certified Associate Cloud Engineer</strong>, and I
         continue to expand my expertise in cloud technologies and software
         engineering best practices.
+      </p>
+      <p>
+        You can view or download my resume here:
+        <a href="/Resume - Sumiran Jaiswal.pdf" target="_blank">View Resume</a>
       </p>
     </section>
     <section id="skills">
@@ -104,11 +111,7 @@
         <p>
           A Python-based software application for analyzing GitHub repository
           issues.
-          <span
-            class="read-more"
-            onclick="toggleDetails('github-insights-details')"
-            >[Read More]</span
-          >
+          <span class="read-more">[Read More]</span>
         </p>
         <div
           id="github-insights-details"
@@ -144,9 +147,7 @@
         <p>
           A patented software application developed to automate the
           attendance-taking process for professors.
-          <span class="read-more" onclick="toggleDetails('attendance-details')"
-            >[Read More]</span
-          >
+          <span class="read-more">[Read More]</span>
         </p>
         <div
           id="attendance-details"
@@ -236,15 +237,16 @@
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      <h2>Connect</h2>
       <p>Email: <a href="mailto:sumi0309@umd.edu">sumi0309@umd.edu</a></p>
       <p>Phone: +1 (202) 760-1163</p>
       <p>
-        <a href="https://github.com/sumi0309/" target="_blank">GitHub</a> |
         <a href="https://www.linkedin.com/in/sumiran-jaiswal" target="_blank"
           >LinkedIn</a
         >
         |
+        <a href="https://github.com/sumi0309/" target="_blank">GitHub</a> |
+
         <a href="https://leetcode.com/u/warrior0331/" target="_blank"
           >LeetCode</a
         >
