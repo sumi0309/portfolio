@@ -161,3 +161,22 @@ header nav h1 .location {
     padding: 2rem;
   }
 }
+
+.github-link {
+  color: #0366d6;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.github-link:hover {
+  color: #ff9800;
+  text-decoration: underline;
+}
+
+.github-logo {
+  height: 18px;
+  width: 18px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
