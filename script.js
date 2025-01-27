@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
         link.textContent = "[Read Less]";
       } else {
         details.style.display = "none";
-        link.textContent = "[Read More]";
+        link.textContent = "Read more..";
       }
     });
   });
