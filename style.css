@@ -76,13 +76,6 @@ footer {
   margin-top: 2rem;
 }
 
-header nav h1 .location {
-  font-size: 1rem;
-  margin-left: 1rem;
-  margin-bottom: 4rem;
-  padding-bottom: 2%;
-}
-
 .project-details {
   display: none;
   margin-top: 1rem;
@@ -179,4 +172,14 @@ header nav h1 .location {
   width: 18px;
   vertical-align: middle;
   margin-left: 5px;
+}
+
+.certification {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-top: 0;
+}
+
+.left-nav h1 {
+  margin-bottom: 0;
 }

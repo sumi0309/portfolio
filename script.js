@@ -39,9 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function toggleDetails(id) {
   const details = document.getElementById(id);
-  if (details.style.display === "none") {
+  const trigger = details.previousElementSibling.querySelector(".read-more");
+
+  if (details.style.display === "none" || details.style.display === "") {
     details.style.display = "block";
+    trigger.textContent = "Read less..";
   } else {
     details.style.display = "none";
+    trigger.textContent = "Read more..";
   }
 }
