@@ -1,185 +1,60 @@
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #0f172a; 
+}
+::-webkit-scrollbar-thumb {
+    background: #334155; 
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #38bdf8; 
+}
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-header {
-  background: #333;
-  color: #fff;
-  padding: 1rem 0;
+/* Animations */
+@keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
 }
 
-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.animate-blob {
+    animation: blob 7s infinite;
 }
 
-header nav .left-nav {
-  display: flex;
-  align-items: center;
+.animation-delay-2000 {
+    animation-delay: 2s;
 }
 
-header nav .right-nav {
-  display: flex;
-  justify-content: flex-end;
-  flex-grow: 1;
+/* Fade In Up Utility for Script */
+.opacity-0 {
+    opacity: 0;
 }
 
-header nav ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
+.translate-y-10 {
+    transform: translateY(40px);
 }
 
-header nav ul li {
-  margin: 0 1rem;
+.transition-all-1000 {
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-header nav ul li a {
-  text-decoration: none;
-  color: #fff;
-  transition: color 0.3s;
-}
-
-header nav ul li a:hover {
-  color: #ffa500;
-}
-
-section {
-  max-width: 1100px;
-  margin: 2rem auto;
-}
-
-section h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #333;
-}
-
-.project,
-.job {
-  margin-bottom: 1.5rem;
-}
-
-footer {
-  text-align: center;
-  padding: 1rem 0;
-  background: #333;
-  color: #fff;
-  margin-top: 2rem;
-}
-
-.project-details {
-  display: none;
-  margin-top: 1rem;
-}
-
-.read-more {
-  color: #2f2d2a;
-  cursor: pointer;
-  text-decoration: dotted;
-}
-
-.read-more:hover {
-  color: #ff8c00;
-}
-
-@media (max-width: 768px) {
-  body {
-    padding: 0 1rem;
-  }
-
-  header nav {
-    flex-direction: column;
-    padding: 1rem 0;
-  }
-
-  header nav .left-nav {
-    margin-bottom: 1rem;
-  }
-
-  header nav .right-nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  header nav ul li {
-    margin: 0.5rem 0;
-  }
-
-  section h2 {
-    font-size: 1.5rem;
-  }
-
-  footer {
-    padding: 1rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  header nav {
-    padding: 0 1.5rem;
-  }
-
-  header nav .left-nav h1 {
-    font-size: 1.8rem;
-  }
-
-  section h2 {
-    font-size: 1.8rem;
-  }
-
-  footer {
-    padding: 1.5rem;
-  }
-}
-
-@media (min-width: 1025px) {
-  header nav {
-    padding: 0 2rem;
-  }
-
-  section h2 {
-    font-size: 2rem;
-  }
-
-  footer {
-    padding: 2rem;
-  }
-}
-
-.github-link {
-  color: #0366d6;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease-in-out;
-}
-
-.github-link:hover {
-  color: #ff9800;
-  text-decoration: underline;
-}
-
-.github-logo {
-  height: 18px;
-  width: 18px;
-  vertical-align: middle;
-  margin-left: 5px;
-}
-
-.certification {
-  font-size: 0.9rem;
-  color: #bbb;
-  margin-top: 0;
-}
-
-.left-nav h1 {
-  margin-bottom: 0;
+/* Glass Card Utilities if needed */
+.glass {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }

@@ -1,294 +1,396 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sumiran Jaiswal - Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <div class="left-nav">
-          <div>
-            <h1>Sumiran Jaiswal</h1>
-            <p class="certification">
-              Google Cloud Certified Associate Cloud Engineer
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sumiran Jaiswal | Software Engineer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: '#0f172a',
+                        card: '#1e293b',
+                        accent: '#38bdf8', 
+                        secondary: '#94a3b8',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark text-white antialiased relative selection:bg-accent selection:text-dark">
+
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 transition-all duration-300 backdrop-blur-md border-b border-white/10" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Added 'relative' and changed 'justify-end' to 'justify-center' -->
+            <div class="relative flex items-center justify-center h-16">
+                
+                <!-- Mobile menu button (Positioned absolutely to the right) -->
+                <div class="absolute right-0 flex md:hidden">
+                    <button type="button" class="text-gray-300 hover:text-white p-2 rounded-md" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Menu (Centered) -->
+                <div class="hidden md:block">
+                    <!-- Removed 'ml-10' to ensure true centering -->
+                    <div class="flex items-baseline space-x-8">
+                        <a href="#about" class="nav-link text-sm font-medium hover:text-accent transition-colors">About</a>
+                        <a href="#experience" class="nav-link text-sm font-medium hover:text-accent transition-colors">Experience</a>
+                        <a href="#leadership" class="nav-link text-sm font-medium hover:text-accent transition-colors">Leadership</a>
+                        <a href="#projects" class="nav-link text-sm font-medium hover:text-accent transition-colors">Projects</a>
+                        <a href="#education" class="nav-link text-sm font-medium hover:text-accent transition-colors">Education</a>
+                        <a href="#contact" class="px-4 py-2 rounded-full border border-accent text-accent text-sm font-medium hover:bg-accent hover:text-dark transition-all">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (No changes needed here, keeps same functionality) -->
+        <div class="hidden md:hidden bg-card/95 backdrop-blur-xl absolute w-full" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10">About</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10">Experience</a>
+                <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10">Projects</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-white/10 text-accent">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <section id="about" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl filter opacity-50 animate-blob"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl filter opacity-50 animate-blob animation-delay-2000"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <p class="text-accent font-medium tracking-wider mb-4 animate-fade-in-up">HELLO, I'M SUMIRAN JAISWAL</p>
+            <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight animate-fade-in-up delay-100 tracking-tight">
+                Software<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">Engineer</span>
+            </h1>
+            <p class="text-xl text-secondary max-w-2xl mx-auto mb-10 animate-fade-in-up delay-200">
+                Specializing in Cloud Computing, Distributed Systems, and AI.
+                <br>Currently pursuing Masters at University of Maryland.
             </p>
-          </div>
+            <div class="flex justify-center gap-4 animate-fade-in-up delay-300">
+                <a href="#projects" class="px-8 py-3 rounded-full bg-accent text-dark font-bold hover:bg-white hover:shadow-[0_0_20px_rgba(56,189,248,0.5)] transition-all">
+                    View Work
+                </a>
+                <a href="#contact" class="px-8 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-all backdrop-blur-sm">
+                    Contact Me
+                </a>
+            </div>
+            
+            <div class="mt-12 flex justify-center space-x-6 text-secondary animate-fade-in-up delay-400">
+                <a href="https://github.com/sumi0309" target="_blank" class="hover:text-white transition-transform hover:-translate-y-1"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/sumiran-jaiswal/" target="_blank" class="hover:text-white transition-transform hover:-translate-y-1"><i class="fab fa-linkedin fa-2x"></i></a>
+            </div>
         </div>
+    </section>
 
-        <div class="right-nav">
-          <ul>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#courses">Courses</a></li>
-            <li><a href="#contact">Connect</a></li>
-          </ul>
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 bg-dark relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-16 text-center">Work Experience</h2>
+            
+            <div class="relative border-l border-white/10 ml-4 md:ml-0 space-y-12">
+                <!-- Role 1 -->
+                <div class="mb-8 ml-8 md:ml-12 relative group">
+                    <div class="absolute -left-[41px] md:-left-[59px] w-6 h-6 rounded-full bg-accent border-4 border-dark group-hover:scale-125 transition-transform"></div>
+                    <div class="bg-card/50 p-6 rounded-xl border border-white/5 hover:border-accent/30 transition-all hover:bg-card/80 backdrop-blur-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                            <h3 class="text-xl font-bold text-white">Graduate Teaching Assistant</h3>
+                            <span class="text-sm text-accent font-mono bg-accent/10 px-3 py-1 rounded-full w-fit mt-2 md:mt-0">Aug 2025 - Present</span>
+                        </div>
+                        <p class="text-lg text-gray-300 mb-1">University of Maryland</p>
+                        <p class="text-sm text-gray-500">College Park, MD</p>
+                    </div>
+                </div>
+                <!-- Role 2 -->
+                <div class="mb-8 ml-8 md:ml-12 relative group">
+                    <div class="absolute -left-[41px] md:-left-[59px] w-6 h-6 rounded-full bg-gray-600 border-4 border-dark group-hover:bg-accent transition-colors"></div>
+                    <div class="bg-card/50 p-6 rounded-xl border border-white/5 hover:border-accent/30 transition-all hover:bg-card/80 backdrop-blur-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                            <h3 class="text-xl font-bold text-white">Software Developer Intern</h3>
+                            <span class="text-sm text-gray-400 font-mono bg-white/5 px-3 py-1 rounded-full w-fit mt-2 md:mt-0">Jun 2025 - Aug 2025</span>
+                        </div>
+                        <p class="text-lg text-gray-300 mb-1">John Consulting</p>
+                        <p class="text-sm text-gray-500">Owings Mills, MD</p>
+                    </div>
+                </div>
+                <!-- Role 3 -->
+                <div class="mb-8 ml-8 md:ml-12 relative group">
+                    <div class="absolute -left-[41px] md:-left-[59px] w-6 h-6 rounded-full bg-gray-600 border-4 border-dark group-hover:bg-accent transition-colors"></div>
+                    <div class="bg-card/50 p-6 rounded-xl border border-white/5 hover:border-accent/30 transition-all hover:bg-card/80 backdrop-blur-sm">
+                        <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                            <h3 class="text-xl font-bold text-white">Cloud Engineer</h3>
+                            <span class="text-sm text-gray-400 font-mono bg-white/5 px-3 py-1 rounded-full w-fit mt-2 md:mt-0">Jan 2023 - May 2024</span>
+                        </div>
+                        <p class="text-lg text-gray-300 mb-1">Cognizant Technology Solutions</p>
+                        <p class="text-sm text-gray-500">Hyderabad, India</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </nav>
-    </header>
-
-    <section id="about">
-      <h2>About Me</h2>
-
-      <p>
-        Welcome to my portfolio! I am a Master's student in Software Engineering
-        at the University of Maryland. I have a passion for building efficient
-        and innovative solutions using modern technologies. I aim to leverage my
-        skills to solve real-world problems in the field of software engineering
-        and cloud engineering.
-      </p>
-      <p>
-        I have a solid understanding of software engineering fundamentals and
-        the Software Development Life Cycle (SDLC). I strive for excellence in
-        my work and enjoy interacting with people to share experiences and learn
-        from others. I am always eager to apply my knowledge and skills to
-        real-world challenges.
-      </p>
     </section>
-    <section id="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>
-          <strong>Programming Languages:</strong> C#, Python, C++, Java,
-          TypeScript, SQL, Shell-Scripting, HTML, CSS.
-        </li>
-        <li>
-          <strong>Frameworks:</strong> ASP.NET Core, Next.js, React, Django,
-          Selenium, Pytest, xUnit, Moq, MongoDB.
-        </li>
-        <li>
-          <strong>Software Design:</strong> Microservices, Architectural
-          Patterns, Design Patterns, SOLID Principles, OOP, SLO, SLA, SLI.
-        </li>
-        <li>
-          <strong>Tools:</strong> AWS Console, Git, Docker, Kubernetes, Visual
-          Studio, VS Code, Postman, Microsoft Suite.
-        </li>
-        <li>
-          <strong>Project Management:</strong> Agile, Scrum, Kanban, Jira.
-        </li>
-      </ul>
-    </section>
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="job">
-        <h3>Cloud Engineer - Cognizant Technology Solutions</h3>
-        <p>
-          Engineered and optimized Infrastructure-as-a-Service (IaaS) solutions
-          on Google Cloud Platform (GCP), resulting in a 30% improvement in
-          operational performance across deployment environments.
-          <span class="read-more" onclick="toggleDetails('cognizant-details')"
-            >Read more..</span
-          >
-        </p>
-        <div
-          class="project-details"
-          id="cognizant-details"
-          style="display: none"
-        >
-          <p>
-            • Collaborated with API development teams to design and implement
-            cost-efficient architectures, reducing Cloud Storage retrieval
-            latency by 15%.<br />
-            • Partnered with infrastructure and DevOps teams to develop
-            scalable, resilient data storage solutions, ensuring high
-            availability and fault tolerance for critical applications.<br />
-            • Successfully completed internal training and earned the Google
-            Cloud Certified Associate Cloud Engineer credential, demonstrating
-            strong proficiency in GCP services, IAM, networking, and compute
-            resources.
-          </p>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="py-24 bg-gradient-to-b from-dark to-card/30">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-16 text-center">Community & Leadership</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Card 1: GDSC -->
+                <div class="group relative h-96 rounded-3xl overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+                         style="background-image: url('images/gdsc-lead.jpg');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity"></div>
+                    
+                    <div class="relative z-10 p-8 h-full flex flex-col justify-end">
+                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4 text-white">
+                            <i class="fas fa-users fa-lg"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-2 text-white">GDSC Co-Lead</h3>
+                        <p class="text-blue-300 font-medium mb-3">Google Developer Student Clubs</p>
+                        <p class="text-gray-300 mb-6 text-sm leading-relaxed">
+                            Leading 10 technical leads and organizing workshops on Cloud & AI for 500+ students. 
+                        </p>
+                        <a href="https://gdg.community.dev/gdg-on-campus-university-of-maryland-college-park-united-states/" target="_blank" class="inline-flex items-center gap-2 text-white font-bold hover:text-accent transition-colors">
+                            Community Page <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Gemini Hack Night -->
+                <div class="group relative h-96 rounded-3xl overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+                         style="background-image: url('images/gemini-hack.jpg');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent opacity-90 group-hover:opacity-80 transition-opacity"></div>
+                    
+                    <div class="relative z-10 p-8 h-full flex flex-col justify-end">
+                        <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4 text-white">
+                            <i class="fas fa-gem fa-lg"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-2 text-white">Gemini Hack Night</h3>
+                        <p class="text-purple-300 font-medium mb-3">Organizer & Mentor</p>
+                        <p class="text-gray-300 mb-6 text-sm leading-relaxed">
+                            Partnered with MLH to guide 120+ students in building 33 AI projects in 12 hours.
+                        </p>
+                        <a href="https://www.cs.umd.edu/article/2025/11/umd-students-build-33-projects-gemini-hack-night" target="_blank" class="inline-flex items-center gap-2 text-white font-bold hover:text-accent transition-colors">
+                            Read Feature <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="project">
-        <h3>
-          Up-To-Date: News Aggregator Web App:
-          <a
-            href="https://github.com/sumi0309/UpToDate"
-            target="_blank"
-            class="github-link"
-            ><img src="githublogo.svg" class="github-logo"
-          /></a>
-        </h3>
+    <!-- Projects Section (New Project Added) -->
+     <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-dark">
+        <div class="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-center">Featured Projects</h2>
+            <p class="text-secondary text-center mb-16 max-w-2xl mx-auto">
+                Engineering scalable solutions with modern cloud infrastructure.
+            </p>
+            
+            <!-- Grid updated to 4 columns on large screens (xl) -->
+            <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+                
+                <!-- 1. CLOUD: Video Analytics -->
+                <div class="group relative h-80 rounded-2xl overflow-hidden border border-white/10 hover:border-accent/50 transition-colors">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+                         style="background-image: url('images/video-analytics.jpg');"></div>
+                    <div class="absolute inset-0 bg-black/80 group-hover:bg-black/70 transition-colors"></div>
+                    
+                    <div class="relative z-10 p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-auto">
+                            <span class="bg-blue-500/20 text-blue-400 border border-blue-500/30 text-xs px-2 py-1 rounded">CLOUD</span>
+                            <i class="fas fa-video text-2xl text-blue-500"></i>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-white mb-2">Video Analytics on EKS</h3>
+                        <p class="text-gray-300 text-sm mb-4 line-clamp-3">
+                            Microservices streaming platform on AWS EKS with Prometheus/Grafana observability.
+                        </p>
+                        
+                        <a href="https://github.com/sumi0309/enpm818r-group6" target="_blank" class="mt-auto text-accent text-sm font-bold hover:underline flex items-center gap-2">
+                            View Code <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
 
-        <p>
-          A news aggregator application designed to keep users informed about
-          local events and news.
-          <span class="read-more">Read more..</span>
-        </p>
-        <div class="project-details">
-          <p>
-            This software system, named Up-To-Date, is a news aggregator web
-            application designed to keep users informed about local events and
-            news in their neighborhood. The application caters to various user
-            roles, allowing individuals to sign in, submit news articles with
-            timestamps and locations, search for news using relevant keywords,
-            delete news items, and suggest modifications or contribute
-            additional information.
-          </p>
-          <p>
-            Designed using <strong>MVC architecture</strong> in
-            <strong>ASP.NET Core</strong>, leveraging Razor Pages for dynamic
-            interfaces and Microsoft SQL Server for backend database management,
-            the application ensures efficient handling of user interactions and
-            robust data storage.
-          </p>
-          <p>
-            The primary goal of Up-To-Date is to provide a platform where users
-            can stay current with the latest happenings in their area, enhancing
-            community engagement and information sharing. The system includes
-            features to ensure ease of use while effectively managing news
-            content and user interactions, making it a valuable tool for local
-            news aggregation and dissemination.
-          </p>
+                <!-- 2. AUTOMATION: Weather Service -->
+                <div class="group relative h-80 rounded-2xl overflow-hidden border border-white/10 hover:border-accent/50 transition-colors">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+                         style="background-image: url('images/weather-dashboard.jpg');"></div>
+                    <div class="absolute inset-0 bg-black/80 group-hover:bg-black/70 transition-colors"></div>
+                    
+                    <div class="relative z-10 p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-auto">
+                            <span class="bg-pink-500/20 text-pink-400 border border-pink-500/30 text-xs px-2 py-1 rounded">AUTOMATION</span>
+                            <i class="fas fa-bolt text-2xl text-pink-500"></i>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-white mb-2">Weather Automation</h3>
+                        <p class="text-gray-300 text-sm mb-4 line-clamp-3">
+                            Automated n8n workflow with Supabase logging and HTML email reports.
+                        </p>
+                        
+                        <a href="https://github.com/sumi0309/n8n-weather-dashboard" target="_blank" class="mt-auto text-accent text-sm font-bold hover:underline flex items-center gap-2">
+                            View on GitHub <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 3. PATENT: Face Recognition -->
+                <div class="group relative h-80 rounded-2xl overflow-hidden border border-white/10 hover:border-accent/50 transition-colors">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+                         style="background-image: url('images/face-attendance.jpg');"></div>
+                    <div class="absolute inset-0 bg-black/80 group-hover:bg-black/70 transition-colors"></div>
+                    
+                    <div class="relative z-10 p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-auto">
+                            <span class="bg-green-500/20 text-green-400 border border-green-500/30 text-xs px-2 py-1 rounded">PATENTED</span>
+                            <i class="fas fa-id-card text-2xl text-green-500"></i>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-white mb-2">Face Recog. Attendance</h3>
+                        <p class="text-gray-300 text-sm mb-4 line-clamp-3">
+                            Patent #539692. Biometric tracking system using React and ML, reducing workload by 90%.
+                        </p>
+                        
+                        <a href="https://github.com/sumi0309/Smart-Attendance-System" target="_blank" class="mt-auto text-accent text-sm font-bold hover:underline flex items-center gap-2">
+                            View Code <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 4. WINNER: Construction Analytics -->
+                <div class="group relative h-80 rounded-2xl overflow-hidden border border-white/10 hover:border-accent/50 transition-colors">
+                    <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" 
+                         style="background-image: url('images/construction-hack.jpg');"></div>
+                    <div class="absolute inset-0 bg-black/80 group-hover:bg-black/70 transition-colors"></div>
+                    
+                    <div class="relative z-10 p-6 h-full flex flex-col">
+                        <div class="flex justify-between items-start mb-auto">
+                            <span class="bg-yellow-500 text-black font-bold text-xs px-2 py-1 rounded">WINNER</span>
+                            <i class="fas fa-hard-hat text-2xl text-yellow-500"></i>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-white mb-2">Construction Analytics</h3>
+                        <p class="text-gray-300 text-sm mb-4 line-clamp-3">
+                            Georgia Tech Hacklytics 2025 Winner. AI backend processing IoT data on AWS/Kubernetes.
+                        </p>
+                        
+                        <a href="https://www.linkedin.com/posts/sumiran-jaiswal_hackathon-victory-at-georgia-institute-activity-7300390384621207554-ZIMe" target="_blank" class="mt-auto text-accent text-sm font-bold hover:underline flex items-center gap-2">
+                            View Victory <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </div>
-      <div class="project">
-        <h3>
-          GitHub Repository Insights Visualizer:
-          <a
-            href="https://github.com/sumi0309/enpm611-teamA2-project"
-            target="_blank"
-            class="github-link"
-            ><img src="githublogo.svg" class="github-logo"
-          /></a>
-        </h3>
-        <p>
-          A Python-based software application for analyzing GitHub repository
-          issues.
-          <span class="read-more">Read more..</span>
-        </p>
-        <div
-          id="github-insights-details"
-          class="project-details"
-          style="display: none"
-        >
-          <p>
-            This project involved developing a software application that
-            utilized a JSON data file containing comprehensive information about
-            GitHub repository issues. The application processed this data to
-            extract meaningful insights and generate graphs showcasing important
-            events and trends within the repository.
-          </p>
-          <p>
-            By analyzing and visualizing the data, the application provided a
-            clear understanding of issue activity, helping to identify
-            bottlenecks, popular topics, and overall repository health. The
-            project was implemented entirely in <strong>Python</strong>,
-            leveraging libraries for data processing and visualization.
-          </p>
-          <p>
-            Through this project, I not only enhanced my technical skills but
-            also recognized the importance of teamwork, thoroughly enjoying my
-            role as a developer. It was a rewarding experience to see how
-            collaborative efforts could transform raw data into actionable
-            insights.
-          </p>
+    </section>
+
+
+    <!-- Education Section (Same as before) -->
+    <section id="education" class="py-24 bg-card/30">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-12 text-center">Education</h2>
+            <div class="space-y-6">
+                <!-- Degree 1 -->
+                <div class="bg-card p-8 rounded-2xl border border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-1">Master of Engineering, Software Engineering</h3>
+                        <p class="text-secondary mb-2">University of Maryland, College Park</p>
+                        <div class="flex gap-2 text-sm text-gray-500">
+                            <span>GPA: 3.7/4.0</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 md:mt-0 text-right">
+                        <span class="text-accent font-mono block">Expected May 2026</span>
+                    </div>
+                </div>
+                <!-- Certification -->
+                <div class="bg-card p-8 rounded-2xl border border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-1">Graduate Certification, Cloud Engineering</h3>
+                        <p class="text-secondary mb-2">University of Maryland</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 text-right">
+                        <span class="text-accent font-mono block">Expected May 2026</span>
+                    </div>
+                </div>
+                <!-- Degree 2 -->
+                <div class="bg-card p-8 rounded-2xl border border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-1">Bachelor of Engineering, Electronics</h3>
+                        <p class="text-secondary mb-2">Devi Ahilya University, Indore</p>
+                        <div class="flex gap-2 text-sm text-gray-500">
+                            <span>GPA: 9.12/10.0</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 md:mt-0 text-right">
+                        <span class="text-gray-500 font-mono block">2019 - 2023</span>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
 
-      <div class="project">
-        <h3>
-          Smart Attendance Portal:
-          <a
-            href="https://github.com/sumi0309/Smart-Attendance-System"
-            target="_blank"
-            class="github-link"
-            ><img src="githublogo.svg" class="github-logo"
-          /></a>
-        </h3>
-        <p>
-          A patented software application developed to automate the
-          attendance-taking process for professors.
-          <span class="read-more">Read more..</span>
-        </p>
-        <div
-          id="attendance-details"
-          class="project-details"
-          style="display: none"
-        >
-          <p>
-            This software was developed to ease the attendance-taking process of
-            professors at our university. The manual process of marking
-            attendance was automated using <strong>FaceApi.js</strong>, a
-            powerful library for face recognition and detection. Professors
-            could simply upload a group picture of their class onto the
-            application, and the system would automatically recognize each
-            student and mark their attendance.
-          </p>
-          <p>
-            The system utilized
-            <strong>FaceApi.js</strong> for backend facial recognition
-            processing and <strong>React</strong> for a dynamic, user-friendly
-            frontend. This combination enhanced both the efficiency and user
-            experience of the application, offering a seamless interface and
-            robust performance for large classrooms and multiple sessions.
-          </p>
-          <p>
-            By leveraging advanced technologies and focusing on scalability,
-            this project not only simplified attendance tracking but also
-            demonstrated innovation in applying AI and web development for
-            educational purposes.
-          </p>
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-dark text-center">
+        <div class="max-w-2xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">Let's Connect</h2>
+            <p class="text-secondary mb-8">
+                I am currently exploring full-time Software Engineering and Cloud opportunities. 
+                Feel free to reach out for collaborations or just a chat.
+            </p>
+            <a href="mailto:sumiranjaiswal@outlook.com" class="inline-flex items-center gap-2 text-2xl font-bold text-white hover:text-accent transition-colors border-b-2 border-accent/50 pb-1 mb-10">
+                <i class="fas fa-envelope"></i> sumiranjaiswal@outlook.com
+            </a>
+            
+            <div class="flex justify-center gap-6 mt-8">
+                <a href="https://www.linkedin.com/in/sumiran-jaiswal/" target="_blank" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-accent hover:text-dark transition-all">
+                    <i class="fab fa-linkedin-in text-xl"></i>
+                </a>
+                <a href="https://github.com/sumi0309" target="_blank" class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center text-white hover:bg-white hover:text-dark transition-all">
+                    <i class="fab fa-github text-xl"></i>
+                </a>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section id="education">
-      <h2>Education</h2>
-      <p>
-        <strong>University of Maryland:</strong> Master's in Software
-        Engineering (2024 - Expected 2026) GPA: 3.9/4
-      </p>
-      <p>
-        <strong>Devi Ahilya University:</strong> Bachelor's in Electronics &
-        Telecommunication (2019 - 2023) GPA: 9.12/10
-      </p>
-    </section>
-    <section id="courses">
-      <h2>Courses</h2>
-      <ul id="courses-list">
-        <li>
-          Master's: Software Engineering, Software Design and Implementation,
-          Secure Coding for Software Engineering, Software Testing and
-          Maintenance, Cloud Security.
-        </li>
-        <li>
-          Bachelor's: Data Structures and Algorithms, Operating Systems,
-          Computer Networks, Computer Organisation and Architecture,
-          Object-Oriented Programming, Embedded Systems
-        </li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Connect</h2>
-      <p>Email: <a href="mailto:sumi0309@umd.edu">sumi0309@umd.edu</a></p>
-      <p>Phone: +1 (202) 760-1163</p>
-      <p>
-        <a href="https://www.linkedin.com/in/sumiran-jaiswal" target="_blank"
-          >LinkedIn</a
-        >
-        |
-        <a href="https://github.com/sumi0309/" target="_blank">GitHub</a> |
-
-        <a href="https://leetcode.com/u/warrior0331/" target="_blank"
-          >LeetCode</a
-        >
-      </p>
-    </section>
-    <footer>
-      <p>&copy; 2025 Sumiran Jaiswal</p>
+    <!-- Footer (Updated) -->
+    <footer class="py-6 bg-black text-center text-gray-600 text-sm">
+        <p>&copy; 2026 Sumiran Jaiswal</p>
     </footer>
+
+    <!-- Scripts -->
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
